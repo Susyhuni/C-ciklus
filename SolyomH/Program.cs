@@ -9,7 +9,7 @@ namespace SolyomH
     class Program
     {
         static void Main(string[] args)
-        {
+        {/*
             Console.WriteLine("Adja megy az első számot");
             int x = int.Parse(Console.ReadLine());
             Console.WriteLine("Adja megy a második számot");
@@ -171,8 +171,6 @@ namespace SolyomH
                                 }
                             }
 
-                            Console.WriteLine("Nyomj meg egy gombot a kilépéshez...");
-                            Console.ReadKey();
                         }
                         Console.WriteLine("Adj meg 10 számot:");
 
@@ -218,13 +216,36 @@ namespace SolyomH
 
                         Console.WriteLine("A megadott szöveg visszafelé:");
                         Console.WriteLine(visszafele);
+                        */
 
-                        Console.WriteLine("\nNyomj meg egy gombot a kilépéshez...");
+                        Console.Write("Adj meg egy számot: ");
+                        int n = int.Parse(Console.ReadLine());
+
+                        int primSzamokSzama = 0;
+
+                        for (int pam = 2; pam <= n; pam++)
+                        {
+                            bool prim = true;
+
+                            for (int oszto = 2; oszto < pam; oszto++)
+                            {
+                                if (pam % oszto == 0)
+                                {
+                                    prim = false;
+                                    break;
+                                }
+                            }
+
+                            if (prim)
+                                primSzamokSzama++;
+                        }
+
+                        Console.WriteLine($"1 és {n} között {primSzamokSzama} prímszám van.");
+
+                        Console.WriteLine("Nyomj meg egy gombot a kilépéshez...");
                         Console.ReadKey();
                     }
                 }
             }
-        }
-    }
-}
+       
 
