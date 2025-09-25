@@ -1,0 +1,7 @@
+C:\Users\solyomhj\source\repos\SolyomH\SolyomH\obj\Debug\SolyomH.csproj.AssemblyReference.cache
+C:\Users\solyomhj\source\repos\SolyomH\SolyomH\obj\Debug\SolyomH.csproj.CoreCompileInputs.cache
+C:\Users\solyomhj\source\repos\SolyomH\SolyomH\bin\Debug\SolyomH.exe.config
+C:\Users\solyomhj\source\repos\SolyomH\SolyomH\bin\Debug\SolyomH.exe
+C:\Users\solyomhj\source\repos\SolyomH\SolyomH\bin\Debug\SolyomH.pdb
+C:\Users\solyomhj\source\repos\SolyomH\SolyomH\obj\Debug\SolyomH.exe
+C:\Users\solyomhj\source\repos\SolyomH\SolyomH\obj\Debug\SolyomH.pdb
