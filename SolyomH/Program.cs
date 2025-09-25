@@ -9,7 +9,7 @@ namespace SolyomH
     class Program
     {
         static void Main(string[] args)
-        {/*
+        {
             Console.WriteLine("Adja megy az első számot");
             int x = int.Parse(Console.ReadLine());
             Console.WriteLine("Adja megy a második számot");
@@ -216,7 +216,7 @@ namespace SolyomH
 
                         Console.WriteLine("A megadott szöveg visszafelé:");
                         Console.WriteLine(visszafele);
-                        */
+
 
                         Console.Write("Adj meg egy számot: ");
                         int n = int.Parse(Console.ReadLine());
@@ -242,10 +242,70 @@ namespace SolyomH
 
                         Console.WriteLine($"1 és {n} között {primSzamokSzama} prímszám van.");
 
-                        Console.WriteLine("Nyomj meg egy gombot a kilépéshez...");
+                        string[] valasztasok = { "kő", "papír", "olló" };
+                        int felhasznaloPont = 0;
+                        int gepPont = 0;
+                        Random rnd = new Random();
+
+                        Console.WriteLine("Kő-Papír-Olló játék (5 kör)");
+
+                        for (int kor = 1; kor <= 5; kor++)
+                        {
+                            Console.WriteLine($"\n{kor}. kör:");
+
+                            string felhasznaloValasztas;
+                            while (true)
+                            {
+                                Console.Write("Válassz (kő, papír, olló): ");
+                                felhasznaloValasztas = Console.ReadLine().ToLower();
+
+                                if (Array.Exists(valasztasok, elem => elem == felhasznaloValasztas))
+                                    break;
+                                else
+                                    Console.WriteLine("Érvénytelen választás, próbáld újra!");
+                            }
+
+                            string gepValasztas = valasztasok[rnd.Next(0, 3)];
+                            Console.WriteLine($"A gép választása: {gepValasztas}");
+
+                            if (felhasznaloValasztas == gepValasztas)
+                            {
+                                Console.WriteLine("Döntetlen!");
+                            }
+                            else if (
+                                (felhasznaloValasztas == "kő" && gepValasztas == "olló") ||
+                                (felhasznaloValasztas == "papír" && gepValasztas == "kő") ||
+                                (felhasznaloValasztas == "olló" && gepValasztas == "papír")
+                            )
+                            {
+                                Console.WriteLine("Te nyertél ezt a kört!");
+                                felhasznaloPont++;
+                            }
+                            else
+                            {
+                                Console.WriteLine("A gép nyert ezt a kört!");
+                                gepPont++;
+                            }
+                        }
+
+                        Console.WriteLine("\nJáték vége!");
+
+                        Console.WriteLine($"Te nyertél: {felhasznaloPont} kör");
+                        Console.WriteLine($"A gép nyert: {gepPont} kör");
+
+                        if (felhasznaloPont > gepPont)
+                            Console.WriteLine("Gratulálok, te nyertél!");
+                        else if (gepPont > felhasznaloPont)
+                            Console.WriteLine("Sajnos a gép nyert!");
+                        else
+                            Console.WriteLine("Döntetlen lett!");
+
+                        Console.WriteLine("\nNyomj meg egy gombot a kilépéshez...");
                         Console.ReadKey();
                     }
                 }
             }
-       
+        }
+    }
+}
 
