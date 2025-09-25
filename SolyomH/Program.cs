@@ -44,8 +44,30 @@ namespace SolyomH
                                 orderby grp.Count() descending
                                 select grp.Key).First();
                 Console.WriteLine($"legtöbször megadott szám a {csoportok}");
-                Console.WriteLine($"alma");
-                Console.ReadLine();
+
+                {
+                    int parosDb = 0;
+                    int paratDb = 0;
+
+                    Console.WriteLine("Adj meg 10 számot:");
+
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        Console.Write($"Szám {i}: ");
+                        int szam3 = int.Parse(Console.ReadLine());
+
+                        if (szam3 % 2 == 0)
+                            parosDb++;
+                        else
+                            paratDb++;
+                    }
+
+                    Console.WriteLine($"Páros számok száma: {parosDb}");
+                    Console.WriteLine($"Páratlan számok száma: {paratDb}");
+                    Console.WriteLine("Nyomj meg egy gombot a kilépéshez...");
+                    Console.ReadKey();
+
+                }
             }
         }
     }
