@@ -151,8 +151,48 @@ namespace SolyomH
                             Console.WriteLine($"4-esek száma: {negyes}");
                             Console.WriteLine($"5-ösök száma: {otos}");
                             Console.WriteLine("Nyomj meg egy gombot a kilépéshez...");
+                        Console.ReadKey();
+                        }
+                        {
+                            Console.Write("Adj meg egy számot (1–10): ");
+                            int szor = int.Parse(Console.ReadLine());
+
+                            if (szor < 1 || szor > 10)
+                            {
+                                Console.WriteLine("A számnak 1 és 10 között kell lennie.");
+                                return;
+                            }
+
+                            Console.WriteLine($"{szor} szorzótáblája (csak a 3-mal osztható eredmények):");
+
+                            for (int i = 1; i <= 10; i++)
+                            {
+                                int eredmeny = szor * i;
+                                if (eredmeny % 3 == 0)
+                                {
+                                    Console.WriteLine($"{szor} x {i} = {eredmeny}");
+                                }
+                            }
+
+                            Console.WriteLine("Nyomj meg egy gombot a kilépéshez...");
                             Console.ReadKey();
                         }
+                        Console.WriteLine("Adj meg 10 számot:");
+
+                        for (int b = 1; b <= 10; b++)
+                        {
+                            Console.Write($"Szám {b}: ");
+                            int szám = int.Parse(Console.ReadLine());
+
+                            string jelleg = szám >= 0 ? "pozitív" : "negatív";
+
+                            string parosParatlan = szám % 2 == 0 ? "páros" : "páratlan";
+
+                            string oszt3 = szám % 3 == 0 ? "osztható 3-mal" : "nem osztható 3-mal";
+
+                            Console.WriteLine($"{szám}: {jelleg}, {parosParatlan}, {oszt3}");
+                        }
+
 
                     }
                 }
