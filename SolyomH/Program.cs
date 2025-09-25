@@ -122,11 +122,9 @@ namespace SolyomH
                                 continue;
                             }
 
-                            // Összeg és darabszám az átlaghoz
                             osszeg += jegy;
                             db++;
 
-                            // Jegyek számlálása
                             switch (jegy)
                             {
                                 case 1: egyes++; break;
@@ -150,8 +148,7 @@ namespace SolyomH
                             Console.WriteLine($"3-asok száma: {harmas}");
                             Console.WriteLine($"4-esek száma: {negyes}");
                             Console.WriteLine($"5-ösök száma: {otos}");
-                            Console.WriteLine("Nyomj meg egy gombot a kilépéshez...");
-                        Console.ReadKey();
+
                         }
                         {
                             Console.Write("Adj meg egy számot (1–10): ");
@@ -191,9 +188,39 @@ namespace SolyomH
                             string oszt3 = szám % 3 == 0 ? "osztható 3-mal" : "nem osztható 3-mal";
 
                             Console.WriteLine($"{szám}: {jelleg}, {parosParatlan}, {oszt3}");
+
                         }
+                        string jelszo1, jelszo2;
 
+                        do
+                        {
+                            Console.Write("Adj meg egy jelszót: ");
+                            jelszo1 = Console.ReadLine();
 
+                            Console.Write("Erősítsd meg a jelszót: ");
+                            jelszo2 = Console.ReadLine();
+
+                            if (jelszo1 != jelszo2)
+                            {
+                                Console.WriteLine("A jelszavak nem egyeznek. Próbáld újra.\n");
+                            }
+
+                        } while (jelszo1 != jelszo2);
+
+                        Console.WriteLine("A jelszó megerősítve!");
+
+                        Console.Write("Adj meg egy tetszőleges szöveget: ");
+                        string szoveg = Console.ReadLine();
+
+                        char[] tomb = szoveg.ToCharArray();
+                        Array.Reverse(tomb);
+                        string visszafele = new string(tomb);
+
+                        Console.WriteLine("A megadott szöveg visszafelé:");
+                        Console.WriteLine(visszafele);
+
+                        Console.WriteLine("\nNyomj meg egy gombot a kilépéshez...");
+                        Console.ReadKey();
                     }
                 }
             }
